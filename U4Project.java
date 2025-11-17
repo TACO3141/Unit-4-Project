@@ -30,10 +30,12 @@ class U4Project
       highIndex --;
       lowIndex ++;
     }
-    for (int i = 0; i < arr.length - 1; i ++)
+    for (int i = 0; i < arr.length; i++)
     {
       backwardsPassword = backwardsPassword + arr[i];
     }
-    System.out.println("Backwards password:\n" + backwardsPassword);
+    System.out.println("Backwards password:\n" + backwardsPassword + "\n");
+    System.out.println("Enter method:\n{S} - Scramble\n{X} - Sort");
+    //Implement a sorting system!!!!!!! 😛
   }
 }
