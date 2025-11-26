@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+import java.util.Arrays;
 
 class U4Project
 {
@@ -42,7 +43,7 @@ class U4Project
     System.out.println("Enter method:\n{S} - Scramble\n{B} - Sort");
     //I chose to make bubble sort for this project. I looked up how exactly bubble sort works, but the code is 100% from my head.
     String choice = scan.nextLine();
-    if (choice.toLowerCase() == "s")
+    if (choice.toLowerCase().equals("s"))
     {
       System.out.println("Scramble initiated.");
       for (int i = password.length() - 1; i >= 0; i--)
@@ -53,10 +54,10 @@ class U4Project
       }
       System.out.println("Password scrambled. Result:\n" + scramble);
     }
-    else if (choice.toLowerCase() == "b")
+    else if (choice.toLowerCase().equals("b"))
     {
       System.out.println("Numberizing password... any symbols or non-letters will be left out.");
-      char[] sortArr = password.toLowerCase().toCharArray();
+      char[] sortArr = (password.toLowerCase()).toCharArray();
       int[] unsortedInts = new int[sortArr.length];
       for (int numberize = 0; numberize < sortArr.length; numberize++)
       {
@@ -165,11 +166,11 @@ class U4Project
           unsortedInts[numberize] = 26;
         }
       }
-
-      while (sorted = false)
+      System.out.println("Sorting...");
+      while (sorted == false)
       {
         sorted = true;
-        for (int sortIndex = 0; sortIndex < unsortedInts.length + 1; sortIndex++)
+        for (int sortIndex = 0; sortIndex < unsortedInts.length - 1; sortIndex++)
         {
           if (unsortedInts[sortIndex] > unsortedInts[sortIndex + 1])
           {
@@ -180,12 +181,7 @@ class U4Project
           }
         }
       }
-      for (int printVar = 0; printVar < unsortedInts.length; printVar++)
-      {
-        toPrint = toPrint + unsortedInts[printVar];
-      }
-      System.out.println("Sorted password: " + toPrint);
-      
+      System.out.println("Sorted password: " + Arrays.toString(unsortedInts));
     }
   }
 }
